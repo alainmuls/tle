@@ -18,4 +18,7 @@ do
 		# echo 'norad files are: '${norad_files}
 	done
 	cat ${norad_files} > cmb/sat${noradid}.txt
+	cd cmb
+	sed -i '/^[[:space:]]*$/d' sat${noradid}.txt
+	cd ..
 done
